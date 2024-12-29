@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>משחקון: מחלקים לקבוצות</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>משחקון: מחלקים לקבוצות</h1>
+    </header>
+    <main>
+        <!-- רשימת שחקנים -->
+        <section id="playerList">
+            <h2>רשימת שחקנים</h2>
+            <ul id="playersList"></ul>
+            <button onclick="selectPlayers()">בחירת שחקנים לחלוקה</button>
+        </section>
+
+        <!-- בחירת שחקנים לחלוקה -->
+        <section id="selectPlayers" style="display: none;">
+            <h2>בחר שחקנים</h2>
+            <ul id="selectablePlayers"></ul>
+            <button onclick="divideTeams()">חלוקה לקבוצות</button>
+        </section>
+
+        <!-- הצגת הקבוצות -->
+        <section id="teamsDisplay" style="display: none;">
+            <h2>חלוקת קבוצות</h2>
+            <div id="team1"><h3>קבוצה 1:</h3><ul></ul></div>
+            <div id="team2"><h3>קבוצה 2:</h3><ul></ul></div>
+            <div id="team3"><h3>קבוצה 3:</h3><ul></ul></div>
+            <div id="team4"><h3>קבוצה 4:</h3><ul></ul></div>
+            <button onclick="confirmAttendance()">אשר הגעה</button>
+        </section>
+
+        <!-- רשימת שחקנים ועדכון דירוג -->
+        <section id="attendance" style="display: none;">
+            <h2>רשימת שחקנים ועדכון דירוג</h2>
+            <ul id="attendanceList"></ul>
+            <a href="update.html">עדכן דירוג שחקנים</a>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

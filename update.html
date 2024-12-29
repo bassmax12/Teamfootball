@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>עדכון דירוג שחקנים</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>עדכון דירוג שחקנים</h1>
+    </header>
+    <main>
+        <form id="updateForm">
+            <ul id="updateList"></ul>
+            <button type="button" onclick="saveUpdates()">שמור דירוגים</button>
+        </form>
+    </main>
+    <script>
+        const players = JSON.parse(localStorage.getItem('players')) || [];
+
+        function loadUpdateForm() {
+            const updateList = document.getElementById('updateList');
+            updateList.innerHTML = '';
+            players.forEach((player, index) => {
+                updateList.innerHTML += `
+                    <li>
+                        ${player.name} 
+                        <input type="number" id="rating${index}" value="${player.rating}" />
+                    </li>`;
+            });
+        }
+
+        function saveUpdates() {
+            players.forEach((player, index) => {
+                const newRating = parseFloat(document.getElementById(`rating${index}`).value);
+                player.rating = newRating;
+            });
+            localStorage.setItem('players', JSON.stringify(players));
+            alert('דירוגים עודכנו בהצלחה!');
+        }
+
+        window.onload = loadUpdateForm;
+    </script>
+</body>
+</html>
