@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>משחקון: מחלקים לקבוצות</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>משחקון: מחלקים לקבוצות</h1>
+    </header>
+    <main>
+        <!-- מאגר שחקנים -->
+        <section id="playerManagement">
+            <h2>מאגר שחקנים</h2>
+            <table id="playersTable">
+                <thead>
+                    <tr>
+                        <th>שם</th>
+                        <th>דירוג</th>
+                        <th>מספר שבועות השתתפות</th>
+                        <th>פעולות</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- נתוני השחקנים ייטענו כאן -->
+                </tbody>
+            </table>
+            <form id="addPlayerForm">
+                <input type="text" placeholder="שם שחקן" id="playerName" required>
+                <input type="number" placeholder="דירוג" id="playerRating" step="0.01" required>
+                <input type="number" placeholder="מספר שבועות השתתפות" id="playerWeeks" required>
+                <button type="button" onclick="addPlayer()">הוסף שחקן</button>
+            </form>
+        </section>
+
+        <!-- בחירת שחקנים -->
+        <section id="selectPlayers">
+            <h2>בחירת שחקנים</h2>
+            <ul id="playersList"></ul>
+            <button onclick="divideTeams()">חלוקה לקבוצות</button>
+        </section>
+
+        <!-- הצגת הקבוצות -->
+        <section id="teamsDisplay">
+            <h2>חלוקת קבוצות</h2>
+            <div id="team1"><h3>קבוצה 1:</h3><ul></ul></div>
+            <div id="team2"><h3>קבוצה 2:</h3><ul></ul></div>
+            <div id="team3"><h3>קבוצה 3:</h3><ul></ul></div>
+            <div id="team4"><h3>קבוצה 4:</h3><ul></ul></div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
